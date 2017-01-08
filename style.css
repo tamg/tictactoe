@@ -1,0 +1,17 @@
+body {
+  width: 600px;
+  margin: auto;
+  font-family: helvetica;
+  background-color: gainsboro;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.cell {
+  height: 100px;
+  width: 100px;
+  font-size: 60pt;
+  text-align: center;
+}
