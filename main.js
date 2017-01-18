@@ -60,6 +60,7 @@ function checkForWinner(currentTurn) {
          getCellValue(combo[2]) === currentTurn) {
 
          gameOver = true;
+         hightlightWinningCells(combo);
      }
   });
   return gameOver;
@@ -69,4 +70,12 @@ function checkForWinner(currentTurn) {
 function getCellValue(cellNumber) {
   var cellId = 'c' + cellNumber;
   return document.getElementById(cellId).innerText;
+}
+
+//highlight the winning cells
+function hightlightWinningCells(cellNumbers) {
+  var cellIds = cellNumbers.map(function(num) {return 'c' + num;});
+      cellIds.forEach(function(id) {
+        document.getElementById('' + id).style.backgroundColor = 'aliceblue';
+      })
 }
