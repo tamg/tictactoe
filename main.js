@@ -18,6 +18,11 @@ function startGame() {
         allCells[i].onclick = function() { setCell(this) }
         }
 
+      //reset button
+      reset = document.getElementById('reset');
+      reset.onclick = function() { resetGame() }
+
+      //message display element
       message = document.getElementById('message');
 
       //set inital message
@@ -78,4 +83,16 @@ function hightlightWinningCells(cellNumbers) {
       cellIds.forEach(function(id) {
         document.getElementById('' + id).style.backgroundColor = 'aliceblue';
       })
+}
+
+// reset game
+function resetGame() {
+  //convert html collection to a regular array
+  var arrCells = [].slice.call(allCells)
+
+  arrCells.map(function(cell) {
+    cell.innerText = '';
+    cell.style.backgroundColor = 'transparent';
+  })
+  startGame();
 }
